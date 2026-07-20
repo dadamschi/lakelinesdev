@@ -1,0 +1,28 @@
+# Lakelines Dev
+
+> Lakelines Dev is an independent studio at https://lakelinesdev.com serving
+> the housing industry. We build fast, search-friendly websites for realtors
+> and home construction companies, and provide HubSpot automation, HubSpot
+> consulting, and SEO consultancy.
+
+## Services
+
+- Realtor & real estate websites: custom, listings-forward sites with lead capture and local SEO
+- Home builder & construction websites: portfolio-driven sites for builders, remodelers, and contractors
+- HubSpot automation & consulting: CRM setup, lead routing, follow-up sequences, pipeline reporting
+- SEO consultancy: technical audits, local SEO, structured data, content strategy
+
+## Key pages
+
+- Home: https://lakelinesdev.com/
+- About the studio: https://lakelinesdev.com/about
+- Portfolio of work: https://lakelinesdev.com/portfolio
+- Contact / start a project: https://lakelinesdev.com/contact
+
+## Facts
+
+- Typical website project timeline: 2–6 weeks from kickoff to launch
+- Typical HubSpot automation project: 1–3 weeks
+- Response time for inquiries: within one business day
+- Built with: Next.js, Sanity CMS, Vercel
+- Contact: hello@lakelinesdev.com

@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fcfcfb;
+  --foreground: #1c1917;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  /* Lake palette */
+  --color-lake-50: #effafc;
+  --color-lake-100: #d7f1f6;
+  --color-lake-200: #b4e4ee;
+  --color-lake-300: #80cfe1;
+  --color-lake-400: #45b1cc;
+  --color-lake-500: #2995b2;
+  --color-lake-600: #257896;
+  --color-lake-700: #24627b;
+  --color-lake-800: #255266;
+  --color-lake-900: #234557;
+  --color-lake-950: #122c3b;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-lake-200);
+  color: var(--color-lake-950);
+}
+
+html {
+  scroll-behavior: smooth;
+}
