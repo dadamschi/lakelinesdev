@@ -28,16 +28,8 @@ export function Footer() {
           </h2>
           <ul className="mt-3 space-y-2 text-sm">
             <li>
-              <a
-                className="text-stone-700 hover:text-lake-700"
-                href={`mailto:${site.email}`}
-              >
-                {site.email}
-              </a>
-            </li>
-            <li>
               <Link className="text-stone-700 hover:text-lake-700" href="/contact">
-                Start a project →
+                Contact form →
               </Link>
             </li>
           </ul>

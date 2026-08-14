@@ -48,7 +48,7 @@ export async function POST(request: Request) {
       "[contact] RESEND_API_KEY or CONTACT_TO_EMAIL is not set — email not sent."
     );
     return NextResponse.json(
-      { error: "The contact form isn't configured yet. Please email us directly." },
+      { error: "The contact form isn't configured yet. Please try again later." },
       { status: 503 }
     );
   }

@@ -43,17 +43,6 @@ export default function ContactPage() {
           <aside className="space-y-8">
             <div className="rounded-2xl border border-stone-200/80 bg-stone-50 p-6">
               <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-500">
-                Prefer email?
-              </h2>
-              <a
-                href={`mailto:${site.email}`}
-                className="mt-2 inline-block font-medium text-lake-700 hover:text-lake-800"
-              >
-                {site.email}
-              </a>
-            </div>
-            <div className="rounded-2xl border border-stone-200/80 bg-stone-50 p-6">
-              <h2 className="text-sm font-semibold uppercase tracking-wider text-stone-500">
                 What happens next?
               </h2>
               <ol className="mt-4 space-y-3 text-sm leading-relaxed text-stone-700">
