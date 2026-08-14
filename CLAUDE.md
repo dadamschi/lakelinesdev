@@ -7,13 +7,14 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```bash
-npm run dev      # Start dev server at http://localhost:3000
-npm run build    # Production build
-npm run start    # Run production build
-npm run lint     # ESLint (flat config)
+npm install              # Install dependencies
+npm run dev              # Start dev server at http://localhost:3000
+npm run build            # Production build
+npm run start            # Run production build
+npm run lint             # ESLint (flat config)
 ```
 
-Sanity Studio is embedded at `/studio` (no separate server needed).
+Sanity Studio is embedded at `/studio` route (no separate server needed).
 
 ## Architecture
 
@@ -21,8 +22,9 @@ Sanity Studio is embedded at `/studio` (no separate server needed).
 
 **Content flow**:
 - Sanity CMS → `src/sanity/queries.ts` (GROQ) → `sanityFetch()` → pages
-- When Sanity isn't configured, `src/lib/fallback.ts` provides placeholder content
-- ISR with 5-minute revalidation (`sanityFetch` default)
+- When Sanity isn't configured (`isSanityConfigured === false`), `src/lib/fallback.ts` provides placeholder content
+- ISR with 5-minute revalidation (`sanityFetch` default, configurable per query)
+- `sanityFetch()` returns `null` when Sanity unavailable; pages handle graceful degradation
 
 **Key files**:
 - `src/lib/site.ts` — Site metadata (name, URL, email, keywords)
@@ -39,9 +41,17 @@ Schemas in `src/sanity/schemaTypes/`:
 - `aboutPage` — Singleton for /about (heading, intro, body, portrait, skills)
 - `siteSettings` — Singleton for global config
 
+## Brand & Styling
+
+- **Colors**: `lake-*` CSS variable palette in `src/app/globals.css`
+- **Logo**: `src/components/Logo.tsx` (React component), `src/app/icon.svg` (favicon), `public/logo.svg` (full lockup)
+- **Site metadata**: `src/lib/site.ts` (name, domain, email, description, keywords)
+- **Tailwind**: Version 4 with CSS-first configuration
+
 ## SEO/GEO Considerations
 
 This is a public marketing site with extensive SEO setup:
+
 - JSON-LD structured data in layout (ProfessionalService, WebSite) and per-page
 - Dynamic sitemap at `/sitemap.xml`
 - `robots.ts` allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot), blocks training crawlers
@@ -50,13 +60,14 @@ This is a public marketing site with extensive SEO setup:
 
 ## Environment Variables
 
-Required for full functionality:
-```
-NEXT_PUBLIC_SANITY_PROJECT_ID
+See `.env.example` for template. Required for full functionality:
+
+```bash
+NEXT_PUBLIC_SANITY_PROJECT_ID    # From sanity.io/manage
 NEXT_PUBLIC_SANITY_DATASET=production
-RESEND_API_KEY
-CONTACT_TO_EMAIL
-CONTACT_FROM_EMAIL  # optional, defaults to onboarding@resend.dev
+RESEND_API_KEY                   # From resend.com/api-keys
+CONTACT_TO_EMAIL                 # Where contact form sends to
+CONTACT_FROM_EMAIL               # Optional, defaults to onboarding@resend.dev
 ```
 
-Site works with placeholders when Sanity env vars are missing.
+Site works with placeholder content when Sanity env vars are missing. Contact form requires Resend vars.

@@ -14,9 +14,6 @@ export function Footer() {
         </div>
 
         <nav aria-label="Footer navigation">
-          <h2 className="text-xs font-semibold uppercase tracking-wider text-stone-500">
-            Site
-          </h2>
           <ul className="mt-3 space-y-2 text-sm">
             <li><Link className="text-stone-700 hover:text-lake-700" href="/">Home</Link></li>
             <li><Link className="text-stone-700 hover:text-lake-700" href="/about">About</Link></li>

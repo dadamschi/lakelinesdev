@@ -62,7 +62,7 @@ const faqs = [
   {
     question: "How do I get a quote?",
     answer:
-      "Use the contact form to tell us about your project. We reply within one business day with questions or a ballpark estimate.",
+      "Use the <a href='/contact'>contact form</a> to tell us about your project. We reply within one business day with questions or a ballpark estimate.",
   },
 ];
 
@@ -185,9 +185,10 @@ export default async function HomePage() {
           {faqs.map((f) => (
             <div key={f.question}>
               <dt className="font-medium text-stone-900">{f.question}</dt>
-              <dd className="mt-2 text-sm leading-relaxed text-stone-600">
-                {f.answer}
-              </dd>
+              <dd
+                className="mt-2 text-sm leading-relaxed text-stone-600 [&_a]:text-lake-700 [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-lake-800"
+                dangerouslySetInnerHTML={{ __html: f.answer }}
+              />
             </div>
           ))}
         </dl>
