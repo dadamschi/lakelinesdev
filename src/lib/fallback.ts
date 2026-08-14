@@ -46,7 +46,7 @@ export const fallbackAbout: AboutContent = {
     "HubSpot automation & consulting",
     "SEO consultancy",
     "Next.js & React development",
-    "CMS integration (Sanity)",
+    "CMS integration",
   ],
   body: null,
   portrait: null,

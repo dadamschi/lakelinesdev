@@ -42,6 +42,7 @@ export async function POST(request: Request) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO_EMAIL;
+  console.log("[contact] apiKey:", apiKey, "to:", to);
 
   if (!apiKey || !to) {
     console.error(
